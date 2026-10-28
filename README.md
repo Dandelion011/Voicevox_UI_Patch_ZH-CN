@@ -58,7 +58,7 @@ app.asar.original.manual
 Get-ChildItem .\app.asar.original.* -File | Get-FileHash -Algorithm SHA256 | Format-Table Path,Hash
 ```
 
-找到哈希为 `8CE37DB2040C15E1AD071D7B80D4884854A4D05E307543BABE924A3FFB3C954F` 的备份，将它复制一份并命名为 `app.asar`。如果没有任何备份符合该哈希，或无法确定哪个文件是原版，请停止操作，不要继续替换。
+找到哈希为 `8CE37DB2040C15E1AD071D7B80D4884854A4D05E307543BABE924A3FFB3C954F` 的备份，将它复制到 `resources` 文件夹并命名为 `app.asar`，用它恢复原版。然后再复制这个已恢复的 `app.asar`，将副本命名为 `app.asar.original.manual`。如果 `app.asar.original.manual` 已存在，先核对其哈希；哈希不同则不要覆盖，改用其他文件名保存旧副本，再将正确的原版副本命名为 `app.asar.original.manual`。如果没有任何备份符合原版哈希，或无法确定哪个文件是原版，请停止操作，不要继续替换。
 
 ### 4. 核对原版哈希
 
