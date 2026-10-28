@@ -1,0 +1,11 @@
+work/
+build/app/
+build/app-expanded/
+build/app-next/
+build/install-test/
+build/*.json
+build/*.asar
+build/release-check/
+build/translation-runtime-check.js
+release/*.zip
+*.log
