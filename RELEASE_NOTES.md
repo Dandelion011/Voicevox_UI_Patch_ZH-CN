@@ -2,29 +2,19 @@
 
 适用：Windows 版 VOICEVOX 0.26.1。
 
-## 安装
+本 Release 不使用安装脚本。下载 `VOICEVOX-0.26.1-zh-CN-manual.zip` 后，按压缩包内 `README.md` 的手动教程操作：
 
-下载并解压 `VOICEVOX-0.26.1-zh-CN-patch.zip`，完全退出 VOICEVOX，在解压目录打开 PowerShell 并运行：
+1. 完全退出 VOICEVOX。
+2. 在 `resources` 文件夹复制原版 `app.asar`，改名为 `app.asar.original.manual`。
+3. 可选地核对原版哈希：
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install_patch.ps1 "E:\Voicevox"
-```
+   `8CE37DB2040C15E1AD071D7B80D4884854A4D05E307543BABE924A3FFB3C954F`
 
-如果安装目录不同，请替换命令中的 `E:\Voicevox`。安装器会校验目标版本、备份原始 `app.asar`，并在写入后校验补丁哈希。未知版本会被拒绝，不会强制覆盖。
+4. 将补丁 ASAR 改名为 `app.asar`，复制到 `resources` 文件夹并确认替换。
+5. 核对补丁哈希：
 
-## 卸载
+   `FDCE15AA2886D7CFA569800F73ECE5F73832DDA443375C070BDFC6FA02FDC5AE`
 
-完全退出 VOICEVOX 后运行：
+恢复时，将 `app.asar.original.manual` 复制回 `app.asar` 即可。不要删除原版备份。
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\uninstall_patch.ps1 "E:\Voicevox"
-```
-
-## 主要内容
-
-- 覆盖主界面、设置、快捷键、自定义工具栏、歌曲编辑器、词典、引擎管理和常见对话框。
-- 角色一级名称保持原文，二级风格名称翻译。
-- 不修改引擎请求、音色/风格 ID、快捷键内部动作或用户项目文件。
-- 独立 ASAR 文件 SHA-256：`FDCE15AA2886D7CFA569800F73ECE5F73832DDA443375C070BDFC6FA02FDC5AE`。
-
-详细说明见压缩包内的 `README.md`。
+详细步骤、旧补丁恢复方法和故障排查见压缩包内的 `README.md`。
